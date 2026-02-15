@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+  
+  <style>
+      input-padding {
+          padding-buttom: 30px;
+      }
+      button{
+          padding-top: 30px;
+          color: red;
+          margin-top: 5px;
+      }
+      linkSide{
+          position: fixed;
+          text-align: top;
+      }
+      body{
+          background-image: url("trio.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        
+        
+      }
+  </style>
+</head>
+<body style="text-align:center; font-family:Arial; margin-top:50px;">
+    <a href="https://www.facebook.com/profile.php?id=61582818070204"
+    
+    >createdBy: CC.org</a>
+    
+    
+
+
+  <h2> Link To QRcode</h2>
+  
+  <input class="input-padding"
+   type="text" id="link" placeholder="Enter your URL here" style="padding:10px; width:300px;">
+  <button onclick="generateQR()" style="padding:10px;">Generate QR</button>
+
+  <br><br>
+  <img id="qr" alt="QR Code">
+  
+  
+  <script>
+    function generateQR() {
+      let url = document.getElementById("link").value;
+      let qrImage = document.getElementById("qr");
+
+      qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" 
+                    + encodeURIComponent(url);
+    }
+  </script>
+
+</body>
+</html>
